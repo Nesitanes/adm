@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="es-sv" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notas - Estudiantes</title>
+    <link
+      rel="shortcut icon"
+      href="https://admacad.udb.edu.sv/Recursos/imagenes/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../resources/estilo.css" />
+    <link
+      rel="stylesheet"
+      href="../resources/css/smart_wizard_all.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../resources/css/udbestudiantes.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/css/fileinput.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/themes/explorer-fas/theme.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://admacad.udb.edu.sv/Recursos/plugins/fullcalendarV5/main.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../resources/css/animate.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://admacad.udb.edu.sv/Recursos/plugins/bootstrap-tour/css/bs5-tour.css"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://admacad.udb.edu.sv/Recursos/plugins/quill/1.3.6/css/quill.snow.css"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/plugins/bootstrap/dist/js/bootstrap.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/EstudiantesPlus/Scripts/jquery.signalR-2.4.2.min.js"></script>
+    <script src="/EstudiantesPlus/signalr/hubs"></script>
+    <!--DataTable-->
+    <script
+      src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/dataTables.rowGroup.min.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.datatables.net/rowgroup/1.1.2/js/dataTables.rowGroup.min.js"
+      type="text/javascript"
+    ></script>
+    <!--UDB-->
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/constantes.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/plugins/chosen-js/chosen.jquery.min.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/plugins/chosen-readonly/dist/chosen-readonly.min.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/moment.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/bootstrap-datetimepicker.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/jquery.unobtrusive-ajax.min.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/UTL.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/jquery.smartwizard5.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://admacad.udb.edu.sv/Recursos/plugins/bootstrap-tour/js/bs5-tour.js"></script>
+    <!--bootstrap-fileinput-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/js/fileinput.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/js/locales/es.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/themes/fas/theme.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.8/themes/explorer-fas/theme.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/imask.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/plugins/fullcalendarV5/main.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/plugins/fullcalendarV5/locales-all.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/plugins/quill/1.3.6//js/quill.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/plugins/bootstrap-notify/3.1.3/bootstrap-notify.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <script
+      src="https://www.gstatic.com/charts/loader.js"
+      type="text/javascript"
+    ></script>
+    <script>
+      var VistaCarritoEstudiantePlus = ""; //Vista de recarga de registros vinculado al carrito
+    </script>
+    <style>
+      .test {
+        background-color: #003087;
+      }
+      /* rows */
+      div.dropdown-multicol {
+        width: 25em;
+      }
+
+      div.dropdown-row > a.dropdown-item {
+        display: inline-block;
+        width: 32%;
+      }
+
+      /* Columns */
+      div.dropdown-multicol2 {
+        width: 30em;
+      }
+
+      div.dropdown-multicol2 > div.dropdown-col {
+        display: inline-block;
+        width: 32%;
+      }
+    </style>
+  </head>
+  <body class="Estudiantes d-flex flex-column h-100">
+    <main role="main" class="flex-shrink-0 mb-3">
+      <nav
+        class="navbar navbar-menu navbar-expand-lg fixed-top bg-estudiantes ps-3 pe-3 test"
+      >
+        <a class="navbar-brand text-white" href="./Home.html"
+          ><strong>Estudiantes</strong></a
+        >
+
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="nav navbar-nav ms-auto d-lg-flex" style="color: white">
+            <li class="nav-item" id="liCarrito">
+              <a
+                class="nav-link p2"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasCarrito"
+                role="button"
+                aria-controls="offcanvasCarrito"
+              >
+                <i
+                  class="fas fa-shopping-cart fa-inverse fa-lg"
+                  aria-hidden="true"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasCarrito"
+                ></i>
+                <span
+                  id="tbCantCarrito"
+                  class="badge pill-rounded bg-warning"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasCarrito"
+                ></span>
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                id="DDlMenu"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-th fa-inverse"></i>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-end dropdown-multicol ps-2"
+                aria-labelledby="DDlMenu"
+                style="background-color: #faf7f7"
+              >
+                <div class="dropdown-row">
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                      </span>
+                      <div>
+                        <small>Evaluación</small><br />
+                        <small>Docente</small>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-people-carry"></i>
+                      </span>
+                      <div>
+                        <small
+                          >Servicio<br />
+                          Social</small
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-clipboard-list"></i>
+                      </span>
+                      <div>
+                        <small>Planificacion<br />Módulos</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="dropdown-row">
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-address-card"></i>
+                      </span>
+                      <div>
+                        <small>
+                          Procedimientos<br />
+                          Académicos
+                        </small>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-user-shield"></i>
+                      </span>
+                      <div>
+                        <small>
+                          Apelación<br />
+                          de Couta
+                        </small>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </span>
+                      <div>
+                        <small>
+                          4a<br />
+                          Matrícula
+                        </small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="dropdown-row">
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-mail-bulk"></i>
+                      </span>
+                      <div>
+                        <small>
+                          Documentos<br />
+                          en Línea
+                        </small>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-graduation-cap"></i>
+                      </span>
+                      <div>
+                        <small>
+                          Proceso de<br />
+                          Graduación
+                        </small>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-bug"></i>
+                      </span>
+                      <div>
+                        <small>
+                          Ticket<br />
+                          &nbsp;
+                        </small>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item" style="text-decoration: none">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 3em; color: #0d6efd">
+                        <i class="fa-solid fa-file-signature"></i>
+                      </span>
+                      <div>
+                        <small class="text-wrap">
+                          Perfil Psicopedagógico
+                        </small>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item">
+                    <div class="text-center mb-1">
+                      <span class="p-1" style="font-size: 2em; color: #0d6efd">
+                        <i class="fas fa-handshake"></i>
+                      </span>
+                      <div>
+                        <small
+                          >Horas de<br />
+                          Vinculación
+                        </small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item" id="liNotificaciones">
+              <a
+                class="nav-link p-2"
+                href="#modalNotificaciones"
+                data-bs-toggle="modal"
+                onclick="modal()"
+              >
+                <i class="far fa-bell fa-inverse"></i>
+                <span
+                  id="txtR"
+                  class="badge pill-rounded bg-danger badge-notificacion"
+                  title="Sin ver"
+                ></span>
+                <span
+                  id="txtP"
+                  class="badge pill-rounded bg-warning badge-notificacionPendientes"
+                  title="Sin ejecutar"
+                ></span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white p-1"
+                href="#"
+                data-bs-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img
+                  src="../resources/images/profile.jpeg"
+                  alt=""
+                  class="rounded-circle"
+                  style="width: 30px; height: 35px"
+                />
+                SG231572
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-end">
+                <a
+                  href="https://admacad.udb.edu.sv/publico/CambiarContraseña?url=https%3a%2f%2fadmacad.udb.edu.sv%2fEstudiantesPlus%2fNotas"
+                  class="dropdown-item"
+                  ><i class="fas fa-key"></i> Cambiar Contraseña</a
+                >
+                <hr />
+                <a class="dropdown-item" href="../PortalWeb.html"
+                  ><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <h1 class="text-center mb-3">Notas</h1>
+
+        <style>
+          .row.highlight:hover {
+            background-color: lightgrey;
+          }
+
+          .row.highlight.active {
+            background-color: lightgray;
+          }
+
+          .row.highlight:hover {
+            cursor: default;
+          }
+
+          #_FichaAlumno_TBLCarreras .active {
+            background-color: #d3d3d3;
+          }
+        </style>
+
+        <div class="card card-udb mb-3">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-lg-2 col-md-12 cubo2 text-center">
+                <img
+                  src="../resources/images/profile.jpeg"
+                  alt="profile-image"
+                  class="rounded-circle"
+                  style="
+                    max-width: 100px;
+                    max-height: 100px;
+                    border-radius: 50%;
+                    border: 2px solid white;
+                    box-shadow: 3px 3px 20px rgb(0 0 0 / 50%);
+                  "
+                />
+              </div>
+              <div class="col-lg-10 col-md-12">
+                <div class="row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <small>Estudiante</small>
+                        <h5>[SG231572] Ayleen Tatiana Santos García</h5>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col-12">
+                        <small>Carrera</small>
+                        <h5 class="mt-1">
+                          [301] Licenciatura en Administración de Empresas
+                        </h5>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <small>Campus</small>
+                        <h5 class="mt-1">Soyapango</h5>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                        <small>Nombre de Programa:</small>
+                        <h5 class="mt-1">UDB</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 ps-0 ms-0 text-center">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                        <small>Plan</small>
+                        <h5 class="mt-1">2023</h5>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-3 px-0">
+                        <small>CUM</small>
+                        <h5 class="mt-1">8.36</h5>
+                      </div>
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-5 ps-0">
+                        <small>Avance</small>
+                        <h5 class="mt-1">19.2 %</h5>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                        <small>Máximo UV</small>
+                        <h5 class="mt-1">20</h5>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-6 px-0">
+                        <small>UV Inscritas</small>
+                        <h5 class="mt-1" id="LBUVInscritas">18</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="navbar mt-3 navbar-udb navbar-expand test">
+          <div class="collapse navbar-collapse" style="height: 54px">
+            <ul class="nav navbar-nav me-auto">
+              <li class="nav-item">
+                <form class="d-flex">
+                  <label class="mt-2 ms-3 me-3">Ciclo:</label>
+                  <select
+                    class="form-control chosen-select"
+                    data-placeholder="Seleccione una opción"
+                    id="DDLModulo"
+                    name="DDLModulo"
+                  >
+                    <option selected="selected" value="01 2024">01 2024</option>
+                    <option value="02 2024">02 2024</option>
+                    <option value="03 2023">03 2023</option>
+                    <option value="02 2023">02 2023</option>
+                    <option value="01 2023">01 2023</option>
+                    <option value="03 2022">03 2022</option>
+                    <option value="02 2022">02 2022</option>
+                    <option value="01 2022">01 2022</option>
+                    <option value="03 2021">03 2021</option>
+                    <option value="02 2021">02 2021</option>
+                    <option value="01 2021">01 2021</option>
+                    <option value="03 2020">03 2020</option>
+                    <option value="02 2020">02 2020</option>
+                    <option value="01 2020">01 2020</option>
+                    <option value="03 2019">03 2019</option>
+                    <option value="02 2019">02 2019</option>
+                    <option value="01 2019">01 2019</option>
+                    <option value="03 2018">03 2018</option>
+                    <option value="02 2018">02 2018</option>
+                    <option value="01 2018">01 2018</option>
+                    <option value="03 2017">03 2017</option>
+                    <option value="02 2017">02 2017</option>
+                    <option value="01 2017">01 2017</option>
+                    <option value="03 2016">03 2016</option>
+                    <option value="02 2016">02 2016</option>
+                    <option value="01 2016">01 2016</option>
+                    <option value="03 2015">03 2015</option>
+                    <option value="02 2015">02 2015</option>
+                    <option value="01 2015">01 2015</option>
+                    <option value="03 2014">03 2014</option>
+                    <option value="02 2014">02 2014</option>
+                    <option value="01 2014">01 2014</option>
+                    <option value="03 2013">03 2013</option>
+                    <option value="02 2013">02 2013</option>
+                    <option value="01 2013">01 2013</option>
+                    <option value="03 2012">03 2012</option>
+                    <option value="02 2012">02 2012</option>
+                    <option value="01 2012">01 2012</option>
+                    <option value="03 2011">03 2011</option>
+                    <option value="02 2011">02 2011</option>
+                    <option value="01 2011">01 2011</option>
+                    <option value="03 2010">03 2010</option>
+                    <option value="02 2010">02 2010</option>
+                    <option value="01 2010">01 2010</option>
+                    <option value="03 2009">03 2009</option>
+                    <option value="02 2009">02 2009</option>
+                    <option value="01 2009">01 2009</option>
+                    <option value="03 2008">03 2008</option>
+                    <option value="02 2008">02 2008</option>
+                    <option value="01 2008">01 2008</option>
+                    <option value="03 2007">03 2007</option>
+                    <option value="02 2007">02 2007</option>
+                    <option value="01 2007">01 2007</option>
+                    <option value="03 2006">03 2006</option>
+                    <option value="02 2006">02 2006</option>
+                    <option value="01 2006">01 2006</option>
+                    <option value="03 2005">03 2005</option>
+                    <option value="02 2005">02 2005</option>
+                    <option value="01 2005">01 2005</option>
+                    <option value="03 2004">03 2004</option>
+                    <option value="02 2004">02 2004</option>
+                    <option value="01 2004">01 2004</option>
+                    <option value="03 2003">03 2003</option>
+                    <option value="02 2003">02 2003</option>
+                    <option value="01 2003">01 2003</option>
+                    <option value="03 2002">03 2002</option>
+                    <option value="02 2002">02 2002</option>
+                    <option value="01 2002">01 2002</option>
+                    <option value="03 2001">03 2001</option>
+                    <option value="02 2001">02 2001</option>
+                    <option value="01 2001">01 2001</option>
+                    <option value="03 2000">03 2000</option>
+                    <option value="02 2000">02 2000</option>
+                    <option value="01 2000">01 2000</option>
+                    <option value="03 1999">03 1999</option>
+                    <option value="02 1999">02 1999</option>
+                    <option value="01 1999">01 1999</option>
+                    <option value="03 1998">03 1998</option>
+                    <option value="02 1998">02 1998</option>
+                    <option value="01 1998">01 1998</option>
+                    <option value="03 1997">03 1997</option>
+                    <option value="02 1997">02 1997</option>
+                    <option value="01 1997">01 1997</option>
+                    <option value="03 1996">03 1996</option>
+                    <option value="02 1996">02 1996</option>
+                    <option value="01 1996">01 1996</option>
+                    <option value="03 1995">03 1995</option>
+                    <option value="02 1995">02 1995</option>
+                    <option value="01 1995">01 1995</option>
+                    <option value="03 1994">03 1994</option>
+                    <option value="02 1994">02 1994</option>
+                    <option value="01 1994">01 1994</option>
+                    <option value="03 1993">03 1993</option>
+                    <option value="02 1993">02 1993</option>
+                    <option value="01 1993">01 1993</option>
+                    <option value="03 1992">03 1992</option>
+                    <option value="02 1992">02 1992</option>
+                    <option value="01 1992">01 1992</option>
+                    <option value="03 1991">03 1991</option>
+                    <option value="02 1991">02 1991</option>
+                    <option value="01 1991">01 1991</option>
+                    <option value="03 1990">03 1990</option>
+                    <option value="02 1990">02 1990</option>
+                    <option value="01 1990">01 1990</option>
+                    <option value="03 1989">03 1989</option>
+                    <option value="02 1989">02 1989</option>
+                    <option value="01 1989">01 1989</option>
+                    <option value="03 1988">03 1988</option>
+                    <option value="02 1988">02 1988</option>
+                    <option value="01 1988">01 1988</option>
+                    <option value="03 1987">03 1987</option>
+                    <option value="02 1987">02 1987</option>
+                    <option value="01 1987">01 1987</option>
+                    <option value="03 1986">03 1986</option>
+                    <option value="02 1986">02 1986</option>
+                    <option value="01 1986">01 1986</option>
+                  </select>
+                </form>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link">
+                  <i class="fas fa-file-pdf"></i>&nbsp;Manual
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalFAQ"
+                >
+                  <i class="fas fa-question"></i>&nbsp;FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div
+          class="modal fade"
+          id="modalFAQ"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="modalFAQLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalFAQLabel">
+                  Preguntas Frecuentes
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="m-2">
+                <div class="d-flex flex-row flex-row-info">
+                  <div class="p-2 flex-row-info-box">
+                    <i class="fas fa-info-circle fa-2x"></i>
+                  </div>
+                  <div class="pt-3 px-3">
+                    <p>
+                      Antes de crear un ticket se le recomienda que consulte las
+                      preguntas frecuentes.
+                    </p>
+                  </div>
+                </div>
+                <div class="p-3">
+                  <div
+                    class="shadow-lg mb-3 bg-white rounded"
+                    id="accordionPanelsStayOpenExample"
+                  >
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="8">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne-8"
+                          aria-expanded="true"
+                          aria-controls="panelsStayOpen-collapseOne"
+                        >
+                          &#191;Qu&#233; pasa si no aparecen mis notas?
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne-8"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="8"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            Primero debes consultar con tu Docente, si ya subió
+                            las notas al portal.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-cancelar-udb"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="divNotasFinales">
+          <div class="card card-udb mb-3">
+            <div class="card-header">
+              <h4>Módulos inscritos</h4>
+            </div>
+            <table class="table table-udb table-bordered table-hover">
+              <thead>
+                <tr class="text-center">
+                  <th>C&oacute;digo</th>
+                  <th>Asignatura</th>
+                  <th>Mat.</th>
+                  <th>NF</th>
+                  <th>Resultado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-codigo="ANF231">
+                  <td class="text-center">ADE501</td>
+                  <td>Análisis de Datos Empresariales</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    <button class="btn btn-link btn-sm pt-0">8.6</button>
+                  </td>
+                  <td class="text-center">Aprobado</td>
+                </tr>
+                <tr data-codigo="CAD501">
+                  <td class="text-center">ENE301</td>
+                  <td>Entorno Económico</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    <button class="btn btn-link btn-sm pt-0">9.1</button>
+                  </td>
+                  <td class="text-center">Aprobado</td>
+                </tr>
+                <tr data-codigo="PRE104">
+                  <td class="text-center">LEE303</td>
+                  <td>Legislación Empresarial</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    <button class="btn btn-link btn-sm pt-0">9.3</button>
+                  </td>
+                  <td class="text-center">Aprobado</td>
+                </tr>
+                <tr data-codigo="QUG501">
+                  <td class="text-center">MAE501</td>
+                  <td>Matemática Empresarial</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    <button class="btn btn-link btn-sm pt-0">7.9</button>
+                  </td>
+                  <td class="text-center">Aprobado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="divNotasFinales">
+          <div class="card card-udb mb-3">
+            <div class="card-header">
+              <h4>Análisis de Datos Empresariales</h4>
+            </div>
+            <table class="table table-udb table-bordered table-hover">
+              <thead>
+                <tr class="text-center">
+                  <th>Actividad</th>
+                  <th>Calificación</th>
+                  <th>Porcentaje</th>
+                  <th>Nota Global</th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-codigo="ANF231">
+                  <td class="text-center">ADE501</td>
+                  <td>Análisis de Datos Empresariales</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    <button class="btn btn-link btn-sm pt-0">8.6</button>
+                  </td>
+                  
+                </tr>
+                <tr data-codigo="CAD501">
+                  <td class="text-center">ENE301</td>
+                  <td>Entorno Económico</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    <button class="btn btn-link btn-sm pt-0">9.1</button>
+                  </td>
+                 
+                </tr>
+                <tr data-codigo="PRE104">
+                  <td class="text-center">LEE303</td>
+                  <td>Legislación Empresarial</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    <button class="btn btn-link btn-sm pt-0">9.3</button>
+                  </td>
+                  
+                </tr>
+                <tr data-codigo="QUG501">
+                  <td class="text-center">MAE501</td>
+                  <td>Matemática Empresarial</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">
+                    <button class="btn btn-link btn-sm pt-0">7.9</button>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="divNotasAsignatura"></div>
+      </div>
+    </main>
+
+    <div class="card" style="background-color: #ebebec">
+      <div class="card-header">
+        <div class="row mb-4 mt-4">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-2">
+            <img src="../resources/images/UDB_negras.png" class="img-fluid" />
+          </div>
+          <div class="col-lg-2">
+            <h4>Redes Sociales</h4>
+
+            <div class="mb-2">
+              <a
+                href="https://www.facebook.com/UDBelsalvador/"
+                style="text-decoration: none"
+                target="_blank"
+                ><i class="fab fa-facebook-square"></i> Facebook</a
+              ><br />
+            </div>
+            <div class="mb-2">
+              <a
+                href="https://twitter.com/UDBElsalvador"
+                style="text-decoration: none"
+                target="_blank"
+                ><i class="fab fa-twitter-square"></i> Twitter</a
+              ><br />
+            </div>
+            <div class="mb-2">
+              <a
+                href="https://www.youtube.com/channel/UCO702u8hWJ4608D4Q40CHzA"
+                style="text-decoration: none"
+                class="mb-5"
+                target="_blank"
+                ><i class="fab fa-youtube-square"></i> Youtube</a
+              ><br />
+            </div>
+            <div class="mb-2">
+              <a
+                href="https://www.instagram.com/udbelsalvador/"
+                style="text-decoration: none"
+                target="_blank"
+                ><i class="fab fa-instagram-square"></i> Instagram</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <h4>Enlaces de Interes</h4>
+
+            <div class="mb-2">
+              <a
+                href="http://udb.edu.sv/"
+                style="text-decoration: none"
+                target="_blank"
+                ><i class="fas fa-globe"></i> Sitio WEB oficial</a
+              >
+            </div>
+            <div class="mb-2">
+              <a
+                href="https://www.udbvirtual.edu.sv/auladigital/login/index.php"
+                style="text-decoration: none"
+                target="_blank"
+                ><i class="fas fa-chalkboard-teacher"></i> Aula Virtual</a
+              >
+            </div>
+            <div class="mb-2">
+              <a
+                href="https://play.google.com/store/apps/details?id=sv.edu.udb.estudiantes&hl=es"
+                style="text-decoration: none"
+                target="_blank"
+                ><i class="fas fa-mobile-alt"></i> APP UDB</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="col-12">
+              <button
+                type="button"
+                class="btn btn-link btn-link-footer"
+                data-toggle="modal"
+                data-bs-toggle="modal"
+                data-target="#MisionVision"
+                data-bs-target="#MisionVision"
+              >
+                Misión y Visión
+              </button>
+            </div>
+            <div class="col-12">
+              <button
+                type="button"
+                class="btn btn-link btn-link-footer"
+                data-toggle="modal"
+                data-bs-toggle="modal"
+                data-target="#PerfProf"
+                data-bs-target="#PerfProf"
+              >
+                Perfil Profesional
+              </button>
+            </div>
+            <div class="col-12">
+              <button
+                type="button"
+                class="btn btn-link btn-link-footer"
+                data-toggle="modal"
+                data-bs-toggle="modal"
+                data-target="#ValsUDB"
+                data-bs-target="#ValsUDB"
+              >
+                Valores UDB
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-0">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <img src="../resources/images/Logos.png" class="img-fluid" />
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+    <div class="container-fluid text-center footer-udb p-4">
+      <h6>© 2008 - 2024 Departamento de Sistemas Informáticos</h6>
+      <h6>Universidad Don Bosco</h6>
+      <br />
+    </div>
+
+    <!--Modal mensaje UTL-->
+    <div
+      class="modal fade text-start"
+      tabindex="-1"
+      role="dialog"
+      id="modalMensajeUTL"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="" id="tipoMensajeUTL" style="min-width: 60%">
+          <div class="row">
+            <div class="col-10">
+              <h5 class="alert-heading mb-0">
+                <strong>
+                  <label id="cabeceraMensajeUTL">_</label>
+                </strong>
+              </h5>
+            </div>
+            <div class="col-2">
+              <button
+                type="button"
+                class="btn-close float-end"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+          <hr class="mb-2 mt-1" />
+          <div class="mt-2" id="textoMensajeUTL"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal mensaje-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalMensaje">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="alert alert-danger" id="tipoMensaje">
+          <div class="row">
+            <div class="col-10">
+              <h5 class="alert-heading">
+                <strong>
+                  <label id="cabeceraMensaje">_</label>
+                </strong>
+              </h5>
+            </div>
+            <div class="col-2">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+          <hr />
+          <p>
+            <span id="textoMensaje"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="modalSessionTimeoutWarning">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Advertencia</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Tu sesión expirara en 5 minutos debido a inactividad.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-cancelar-udb"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="modalSessionTimeout">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Advertencia</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Tu sesión ha expirado.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-cancelar-udb"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal sesión duplicada -->
+    <div
+      class="modal fade"
+      id="modalSesion"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalSesionTitulo"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+      data-bs-backdrop="static"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSesionTitulo">Sesión duplicada</h5>
+          </div>
+          <div class="modal-body">
+            Ha iniciado sesión desde otra computadora o navegador. Haz clic en
+            <span class="fw-bold">Usar aquí</span> para seguir usando el portal
+            de estudiantes desde esta ventana.
+          </div>
+          <div class="modal-footer text-center">
+            <button type="button" class="btn btn-aceptar-udb" id="btnUsarAqui">
+              Usar aquí
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="MisionVision"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">Misión y Visión</h5>
+            <button
+              type="button"
+              class="close btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+              data-bs-dismiss="modal"
+            >
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="https://admacad.udb.edu.sv/Recursos/imagenes/misionvision.jpg"
+              class="img-fluid"
+            />
+
+            <h4>Misión</h4>
+            <p class="small text-justify">
+              Somos una institución de Educación Superior con carisma salesiano
+              dedicada a la formación integral de la persona humana, por medio
+              de la investigación, la ciencia, la cultura, la tecnología, la
+              innovación y el compromiso con la comunidad para la construcción
+              de una sociedad libre, justa y solidaria.
+            </p>
+            <h4>Visión</h4>
+            <p class="small text-justify">
+              Una universidad salesiana, líder a nivel nacional y referente a
+              nivel regional por su modelo educativo; reconocida por la
+              innovación curricular; por el desarrollo profesional y la
+              internacionalización de sus estudiantes, educadores y personal de
+              gestión; por la ejecución de proyectos de investigación,
+              desarrollo e innovación; por sus publicaciones de impacto; por sus
+              programas de grado y postgrado acreditados internacionalmente; por
+              sus programas a distancia únicos e innovadores; por el
+              mejoramiento continuo de la calidad y por la gestión de sus
+              recursos físicos, tecnológicos y financieros para la
+              sostenibilidad de la institución.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-cancelar-udb"
+              data-dismiss="modal"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="PerfProf"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Perfil Profesional
+            </h5>
+            <button
+              type="button"
+              class="close btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+              data-bs-dismiss="modal"
+            >
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="https://admacad.udb.edu.sv/Recursos/imagenes/perfiludb.jpg"
+              class="img-fluid"
+            />
+            <br />
+            <b>Competencias personales (aprender a ser)</b>
+
+            <ul class="small text-justify">
+              <li>
+                Posee una sólida y definida identidad personal: es una persona
+                madura, conciente de su dignidad, del valor y responsabilidad
+                inherentes a su vida, a su naturaleza racional, libre y
+                trascendente.
+              </li>
+              <li>
+                Tiene un auto concepto equilibrado de sí mismo en todas sus
+                dimensiones: racional, psicológica y emocional; es conciente y
+                de sus limitaciones. Mantiene una visión positiva y optimista de
+                sí mismo, de las demás personas y de la historia."
+              </li>
+              <li>
+                "Manifiesta apertura de los valores y posee una conciencia ética
+                que le orienta y posibilita la formulación de un proyecto de
+                vida, personal profesional y social.
+              </li>
+            </ul>
+            <b>Competencia cognitivas (aprender a aprender)</b>
+            <ul class="small text-justify">
+              <li>
+                Manifiesta apertura ala verdad científica, filosófica y
+                religiosa.
+              </li>
+              <li>
+                Posee una visión global del mundo y de la sociedad en que vive.
+              </li>
+              <li>
+                Es capaz de ampliar y gestionar cooperativamente sus procesos de
+                aprendizaje y de seguir formándose constantemente durante su
+                vida.
+              </li>
+              <li>
+                Es crítico, creativo y flexible en el desarrollo de nuevas
+                respuestas a los desafíos que le plantea el ambiente natural y
+                humano.
+              </li>
+            </ul>
+            <b>Competencias productivas (aprender a hacer)</b>
+            <ul class="small text-justify">
+              <li>
+                Está profesional o técnicamente capacitado en su campo de
+                formación. Posee habilidades básicas especiales y técnicas.
+              </li>
+              <li>
+                Es capaz de integrar conocimientos teórico y habilidades
+                prácticas, de aplicar la metodología investigativa a la búsqueda
+                de soluciones a los problemas en las áreas de su desempeño
+                laboral y profesional.
+              </li>
+              <li>
+                Evidencia un espíritu emprendedor, manifiesta capacidad de
+                iniciativa, de planificación y de una gestión de calidad de los
+                procesos humanos y productos. Posee un elevado sentido de
+                trabajo y de la responsabilidad social que de él deriva.
+              </li>
+            </ul>
+
+            <b>Competencias sociales (aprender a convivir)</b>
+            <ul class="small text-justify">
+              <li>
+                Es capaz de establecer relaciones humanas maduras, de integrarse
+                positivamente a su entorno educativo, laboral o social de
+                trabajo en equipo en torno a proyectos compartidos.
+              </li>
+              <li>
+                Se muestra socialmente sensible, honesto y solidario frente a la
+                realidad del país, particularmente hacia la condición de los
+                jóvenes más pobres.
+              </li>
+              <li>
+                Es conciente de sus responsabilidades democráticas, dialoga y
+                participa en la definición y realización del bien común en su
+                comunidad y en la nación.
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-cancelar-udb"
+              data-dismiss="modal"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+          <hr class="mb-2 mt-1" />
+          <div class="mt-2" id="textoMensajeUTL"></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="ValsUDB"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel2">Valores</h5>
+            <button
+              type="button"
+              class="close btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+              data-bs-dismiss="modal"
+            >
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="https://admacad.udb.edu.sv/Recursos/imagenes/valoresudb.jpg"
+              class="img-fluid"
+            />
+            <h6><b>VERDAD</b></h6>
+            <p class="small text-justify">
+              Es la razón de nuestra labor docente, de investigación y de
+              proyección social, que busca la verdad mediante la rigurosidad
+              cientíca y los valores cristianos.
+            </p>
+            <h6><b>INTEGRIDAD</b></h6>
+            <p class="small text-justify">
+              Promovemos la dignidad de toda persona humana, hombre y mujer, a
+              través de una educación y un estilo de relaciones que garantice la
+              integralidad de su desarrollo personal y social.
+            </p>
+            <h6><b>SOLIDARIDAD</b></h6>
+            <p class="small text-justify">
+              Formamos personas que vivan comprometidas con la justicia para
+              hacer una sociedad más solidaria y humana.
+            </p>
+            <h6><b>ESPIRITUALIDAD</b></h6>
+            <p class="small text-justify">
+              Compartimos una visión del mundo y de la persona en sintonía con
+              el Evangelio de Cristo.
+            </p>
+            <h6><b>RAZÓN</b></h6>
+            <p class="small text-justify">
+              La disponibilidad al diálogo, a la empatía; la educación al
+              sentido crítico, a pensar con libertad, al descubrimiento y
+              adhesión a los valores éticos, a la formación de la conciencia
+              moral, para la construcción de la sociedad.
+            </p>
+            <h6><b>AMABILIDAD</b></h6>
+            <p class="small text-justify">
+              Una experiencia comunitaria basada en la presencia cálida y con
+              espíritu de familia.
+            </p>
+            <h6><b>RESPONSABILIDAD</b></h6>
+            <p class="small text-justify">
+              Sinergia y adhesión a la propuesta educativo-pastoral de la
+              Universidad, desde la diversidad de la Comunidad Académica, para
+              garantizar el alcance de los resultados mediante el trabajo y la
+              innovación
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-cancelar-udb"
+              data-dismiss="modal"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+          <hr />
+          <p>
+            <span id="textoMensaje"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: none" role="status" aria-hidden="true" id="loader">
+      <div class="progress-udb">
+        <div>
+          <img
+            src="https://admacad.udb.edu.sv/Recursos/imagenes/DonBosco.gif"
+          />
+        </div>
+        <div class="progress-container">
+          <div class="progress-herz">
+            <div class="progress-bar-udb">
+              <div class="progress-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalNotificaciones"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-notificaciones" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title">Notificaciones</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="btn-group" role="group" style="width: 200px">
+              <button
+                id="btnNotificacionRecibido"
+                type="button"
+                class="btn btn-eliminar-udb"
+                onclick="activiarTab(1)"
+              >
+                Recibidos
+              </button>
+              <button
+                id="btnNotificacionPendiente"
+                type="button"
+                class="btn btn-outline-warning"
+                onclick="activiarTab(2)"
+              >
+                Pendientes
+              </button>
+            </div>
+            <div class="table-responsive" id="tRecibidos">
+              <table
+                id="tNotificacionesRM"
+                class="table table-udb table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th style="width: 150px">Fecha</th>
+                    <th style="width: 100px">ID</th>
+                    <th>Tipo</th>
+                    <th>Mensaje</th>
+                    <th>Titular</th>
+                    <th style="width: 150px" align="center">Estado</th>
+                    <th style="width: 50px" align="center">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tBodyR"></tbody>
+              </table>
+            </div>
+            <div
+              class="table-responsive"
+              id="tPendientes"
+              style="display: none"
+            >
+              <table
+                id="tNotificacionesPM"
+                class="table table-udb table-bordered"
+              >
+                <thead>
+                  <tr>
+                    <th style="width: 150px">Fecha</th>
+                    <th style="width: 100px">ID</th>
+                    <th>Tipo</th>
+                    <th>Mensaje</th>
+                    <th>Titular</th>
+                    <th style="width: 150px" align="center">Estado</th>
+                    <th style="width: 50px" align="center">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tBodyP"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a
+              href="/EstudiantesPlus/FLWNotificaciones"
+              class="btn btn-aceptar-udb"
+              >Ver todas</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form
+      action="/EstudiantesPlus/Notas"
+      id="__AjaxAntiForgeryForm"
+      method="post"
+    >
+      <input
+        name="__RequestVerificationToken"
+        type="hidden"
+        value="Kb5Ayo3q9k9nhT-2uA-5tgXFRZ-83HspXAutATDyaW68IH2M-VvhR-j-F8galHlqfkS_SxmILfjMXtuZZjW9qjqAklk1"
+      />
+    </form>
+
+    <div
+      class="offcanvas offcanvas-end"
+      id="offcanvasCarrito"
+      aria-labelledby="offcanvasCarritoLabel"
+    ></div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modalConfirmarEliminarCarrito"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalConfirmarEliminarCarritoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalConfirmarEliminarCarritoLabel">
+              Eliminar Item Carrito
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input id="idItemCarrito" name="id" type="hidden" value="-1" />
+            <div class="text-center">
+              ¿Está seguro que desea eliminar el item seleccionado?
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-aceptar-udb"
+              id="BTNEliminarItemCarrito"
+            >
+              Aceptar
+            </button>
+            <button
+              type="button"
+              class="btn btn-cancelar-udb"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://admacad.udb.edu.sv/Recursos/js/init.js"></script>
+    <div
+      class="modal fade"
+      id="modalExtenderSesion"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      arialabelledby="modalExtenderSesionLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title"><b>Advertencia</b></h5>
+            <href
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></href>
+          </div>
+          <div class="modal-body">
+            Su sesión expirara en: <b id="session_countdown"></b>
+            <br />
+            ¿Desea extender la sesión?
+          </div>
+          <div class="modal-footer">
+            <button
+              id="BTNExtenderAuth"
+              type="button"
+              class="btn btn-aceptar-udb"
+            >
+              Extender Sesión
+            </button>
+            <button
+              type="button"
+              class="btn btn-cancelar-udb"
+              data-bs-dismiss="modal"
+            >
+              Cerrar Sesión
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://admacad.udb.edu.sv/Recursos/js/timeout-sort2.js?v53.12.12"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>
